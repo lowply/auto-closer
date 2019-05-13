@@ -1,3 +1,3 @@
-module github.com/github/Japan
+module github.com/lowply/auto-closer
 
 go 1.12
