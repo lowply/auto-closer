@@ -4,8 +4,8 @@ This action closes all issues that have a specific label while keeping the lates
 
 ## Environment variables
 
-- `AC_LABEL`: *required* The label that the target issue should have.
-- AC_KEEP: *optional* The number of the issues should be kept open. Default: `1`
+- `AC_LABEL` (*required*): The label that the target issue should have.
+- `AC_KEEP` (*optional*): The number of the issues should be kept open. Default value: `1`
 
 ## Running locally for development
 
