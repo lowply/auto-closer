@@ -14,7 +14,6 @@ This is designed to be used as a GitHub Action, but you can also just build and 
 ```
 export GITHUB_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export GITHUB_REPOSITORY="owner/repository"
-export GITHUB_WORKSPACE="/path/to/your/local/repository"
+export AC_LABEL="label"
+go run src/main.go
 ```
-
-You can use a different repository by overriding the `GITHUB_REPOSITORY` env var for testing purposes.
