@@ -11,7 +11,7 @@ LABEL "maintainer"="Sho Mizutani <lowply@github.com>"
 COPY src src
 ENV GO111MODULE=on
 WORKDIR /go/src
-RUN go build -o ../bin/auto-closer
+RUN go build -o ../bin/main
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
