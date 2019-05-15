@@ -120,7 +120,7 @@ func (a *AutoCloser) closeIssues() error {
 			return errors.New("Error posting a comment: " + resp.Status)
 		}
 
-		fmt.Println("Closed an issue:\n" + oldIssues[i].Title)
+		fmt.Println("Closed issue:\n" + oldIssues[i].Title)
 
 		time.Sleep(1 * time.Second)
 	}
