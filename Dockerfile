@@ -8,10 +8,9 @@ LABEL "repository"="https://github.com/lowply/auto-closer"
 LABEL "homepage"="https://github.com/lowply/auto-closer"
 LABEL "maintainer"="Sho Mizutani <lowply@github.com>"
 
-COPY src src
-ENV GO111MODULE=on
 WORKDIR /go/src
-RUN go build -o ../bin/main
+COPY src .
+RUN GO111MODULE=on go build -o /go/bin/main
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
