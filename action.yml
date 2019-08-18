@@ -1,0 +1,9 @@
+name: 'Auto Closer'
+author: 'Sho Mizutani <lowply@github.com>'
+description: 'A GitHub Action that closes all issues with a specific label while keeping the latest one(s) open.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'check-circle'
+  color: 'red'
