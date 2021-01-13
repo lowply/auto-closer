@@ -83,7 +83,8 @@ func (a *autoCloser) getIssuesList() error {
 
 func (a *autoCloser) closeIssues() error {
 	if len(a.issues) == 0 {
-		fmt.Println("No issues found with the label: " + a.label)
+		fmt.Printf("No issues found with the label: %v", a.label)
+		return nil
 	}
 
 	if len(a.issues) < a.keep {
