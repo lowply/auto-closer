@@ -31,6 +31,12 @@ func newAutoCloser() (*autoCloser, error) {
 		if err != nil {
 			return nil, err
 		}
+		if keep < 1 {
+			return nil, errors.New("AC_KEEP should be larger than 0")
+		}
+		if keep > 99 {
+			return nil, errors.New("AC_KEEP should be less than 100")
+		}
 		a.keep = keep
 	}
 
@@ -78,6 +84,10 @@ func (a *autoCloser) getIssuesList() error {
 func (a *autoCloser) closeIssues() error {
 	if len(a.issues) == 0 {
 		fmt.Println("No issues found with the label: " + a.label)
+	}
+
+	if len(a.issues) < a.keep {
+		fmt.Printf("AC_KEEP is %v, but there are only %v open issues.", a.keep, len(a.issues))
 		return nil
 	}
 
