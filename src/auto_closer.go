@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
 	"strconv"
 	"strings"
@@ -43,7 +44,7 @@ func newAutoCloser() (*autoCloser, error) {
 	a.token = os.Getenv("GITHUB_TOKEN")
 	a.repository = os.Getenv("GITHUB_REPOSITORY")
 	a.label = os.Getenv("AC_LABEL")
-	a.endpoint = "https://api.github.com/repos/" + a.repository + "/issues?labels=" + a.label
+	a.endpoint = "https://api.github.com/repos/" + a.repository + "/issues?labels=" + url.QueryEscape(a.label)
 	return a, nil
 }
 
