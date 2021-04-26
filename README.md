@@ -41,8 +41,9 @@ jobs:
 This is designed to be used as a GitHub Action, but you can also just build and run it locally with the following env vars:
 
 ```
+cd src
 export GITHUB_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export GITHUB_REPOSITORY="owner/repository"
 export AC_LABEL="label"
-go run src/main.go
+go run .
 ```
